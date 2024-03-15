@@ -130,3 +130,84 @@ akash@sky:/home/testuser$ cd ACLDIR/
 akash@sky:/home/testuser/ACLDIR$ touch hello
 akash@sky:/home/testuser/ACLDIR$ 
 ```
+## shell_script
+```
+akash@sky:~$ mkdir shell_script
+akash@sky:~$ cd shell_script/
+akash@sky:~/shell_script$ vim test.sh
+akash@sky:~/shell_script$ cat test.sh 
+#!/bin/bash
+#shebang for use to fix excuteable shell
+echo "hello world"
+akash@sky:~/shell_script$ ls -l 
+total 4
+-rw-rw-r-- 1 akash akash 72 Mar 15 10:59 test.sh
+akash@sky:~/shell_script$ bash test.sh 
+hello world
+akash@sky:~/shell_script$ chmod +x test.sh 
+akash@sky:~/shell_script$ test.sh
+test.sh: command not found
+akash@sky:~/shell_script$ date
+Friday 15 March 2024 11:02:26 AM IST
+akash@sky:~/shell_script$ mv test.sh test
+akash@sky:~/shell_script$ test
+akash@sky:~/shell_script$ ls
+test
+akash@sky:~/shell_script$ mv test test 123
+mv: target '123' is not a directory
+akash@sky:~/shell_script$ mv test test123
+akash@sky:~/shell_script$ test123
+test123: command not found
+akash@sky:~/shell_script$ ls
+test123
+akash@sky:~/shell_script$ ls -l 
+total 4
+-rwxrwxr-x 1 akash akash 72 Mar 15 10:59 test123
+akash@sky:~/shell_script$ 
+akash@sky:~/shell_script$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+akash@sky:~/shell_script$ ./test123
+hello world
+akash@sky:~/shell_script$ mv test123 myecho 
+akash@sky:~/shell_script$ sudo cp myecho /bin/
+[sudo] password for akash: 
+akash@sky:~/shell_script$ myecho 
+hello world
+akash@sky:~/shell_script$ ls
+myecho
+akash@sky:~/shell_script$ vim read.sh
+akash@sky:~/shell_script$ vim var.sh
+akash@sky:~/shell_script$ bash var.sh 
+5
+akash@sky:~/shell_script$ vim var.sh
+akash@sky:~/shell_script$ bash var.sh 
+akash
+akash
+akash@sky:~/shell_script$ vim var.sh
+akash@sky:~/shell_script$ bash var.sh 
+tell me your name:
+akash
+akash
+Friday 15 March 2024 11:11:06 AM IST
+akash@sky:~/shell_script$ vim var.sh
+akash@sky:~/shell_script$ bash var.sh 
+tell me your name:
+akash
+hello akash this is shell
+Friday 15 March 2024 11:11:44 AM IST
+akash@sky:~/shell_script$ cat var.sh 
+#!/bin/bash
+echo tell me your name: 
+read x
+sleep 2
+echo hello $x this is shell
+date
+akash@sky:~/shell_script$ cat var.sh 
+#!/bin/bash
+echo tell me your name: 
+read x
+sleep 2
+echo hello $x this is shell
+date
+akash@sky:~/shell_script$ 
+```
