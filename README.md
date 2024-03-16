@@ -210,4 +210,27 @@ sleep 2
 echo hello $x this is shell
 date
 akash@sky:~/shell_script$ 
+``` 
+## 16 march 
+```
+882  a=$((10+3))
+  883  echo $a
+  884  sum=`expr 10 + 3`
+  885  echo $sum
+  886  date
+  887  cal 
+  888  date ; sleep 2 ; cal ; sleep 2 ; echo "etc"
+  889  cd shell_script/
+  890  ls
+  891  cat if2.sh 
+  892  vim cmd.sh
+  893  bash cmd.sh 
+  894  vim for.sh
+  895  bash for.sh 
+  896  ls
+  897  vim for.sh
+  898  vim count.sh
+  899  bash count.sh 
+  900  cat count.sh 
+  901  history 
 ```
