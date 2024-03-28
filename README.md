@@ -235,6 +235,10 @@ akash@sky:~/shell_script$
   901  history 
 ```
 ## apache server
+
+<img src=apache2_1.jpg>
+<img src=apache2_2.jpg>
+
 ```
 ubuntu@ip-172-31-40-21:~$ systemctl status apache2
 ● apache2.service - The Apache HTTP Server
