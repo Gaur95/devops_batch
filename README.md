@@ -234,3 +234,115 @@ akash@sky:~/shell_script$
   900  cat count.sh 
   901  history 
 ```
+## apache server
+```
+ubuntu@ip-172-31-40-21:~$ systemctl status apache2
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: active (running) since Thu 2024-03-28 05:18:58 UTC; 3min 5s ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 2220 (apache2)
+      Tasks: 55 (limit: 1121)
+     Memory: 4.8M
+        CPU: 41ms
+     CGroup: /system.slice/apache2.service
+             ├─2220 /usr/sbin/apache2 -k start
+             ├─2222 /usr/sbin/apache2 -k start
+             └─2223 /usr/sbin/apache2 -k start
+
+Mar 28 05:18:58 ip-172-31-40-21 systemd[1]: Starting The Apache HTTP Server...
+Mar 28 05:18:58 ip-172-31-40-21 systemd[1]: Started The Apache HTTP Server.
+ubuntu@ip-172-31-40-21:~$ sudo systemctl enable apache2
+Synchronizing state of apache2.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable apache2
+ubuntu@ip-172-31-40-21:~$ 
+
+
+
+
+
+ubuntu@ip-172-31-40-21:~$ cd /var/www/html/
+ubuntu@ip-172-31-40-21:/var/www/html$ ls
+index.html
+ubuntu@ip-172-31-40-21:/var/www/html$ curl ifconfig.me
+65.2.29.174ubuntu@ip-172-31-40-21:/var/www/html$ rm index.html 
+rm: remove write-protected regular file 'index.html'? y
+rm: cannot remove 'index.html': Permission denied
+ubuntu@ip-172-31-40-21:/var/www/html$ ls -l index.html 
+-rw-r--r-- 1 root root 10671 Mar 28 05:18 index.html
+ubuntu@ip-172-31-40-21:/var/www/html$ sudo rm index.html 
+ubuntu@ip-172-31-40-21:/var/www/html$ ls
+ubuntu@ip-172-31-40-21:/var/www/html$ vim index.html
+ubuntu@ip-172-31-40-21:/var/www/html$ sudo vim index.html
+ubuntu@ip-172-31-40-21:/var/www/html$ cat index.html 
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>hello this is apache</h1>
+
+<p>My first paragraph.</p>
+
+</body>
+</html>
+
+ubuntu@ip-172-31-40-21:/var/www/html$ sudo vim index.html
+ubuntu@ip-172-31-40-21:/var/www/html$ ls
+index.html
+ubuntu@ip-172-31-40-21:/var/www/html$ vim example.html
+ubuntu@ip-172-31-40-21:/var/www/html$ sudo vim example.html
+ubuntu@ip-172-31-40-21:/var/www/html$ sudo vim index.html
+ubuntu@ip-172-31-40-21:/var/www/html$ cat index.html 
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>hello this is apache</h1>
+<a href="/example.html"><button>Click me</button></a>
+<p>My first paragraph.</p>
+
+</body>
+</html>
+
+ubuntu@ip-172-31-40-21:/var/www/html$ cd /etc/apache2/
+ubuntu@ip-172-31-40-21:/etc/apache2$ ls
+apache2.conf    conf-enabled  magic           mods-enabled  sites-available
+conf-available  envvars       mods-available  ports.conf    sites-enabled
+ubuntu@ip-172-31-40-21:/etc/apache2$ vim ports.conf 
+ubuntu@ip-172-31-40-21:/etc/apache2$ sudo vim ports.conf 
+'ubuntu@ip-172-31-40-21:/etc/apache2$ 
+ubuntu@ip-172-31-40-21:/etc/apache2$ sudo systemctl reload apache2
+ubuntu@ip-172-31-40-21:/etc/apache2$ ls
+apache2.conf    conf-enabled  magic           mods-enabled  sites-available
+conf-available  envvars       mods-available  ports.conf    sites-enabled
+ubuntu@ip-172-31-40-21:/etc/apache2$ sudo vim apache2.conf 
+ubuntu@ip-172-31-40-21:/etc/apache2$ ls
+apache2.conf    conf-enabled  magic           mods-enabled  sites-available
+conf-available  envvars       mods-available  ports.conf    sites-enabled
+ubuntu@ip-172-31-40-21:/etc/apache2$ sudo vim apache2.conf 
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-enabled$ ls -l 
+total 0
+lrwxrwxrwx 1 root root 35 Mar 28 05:18 000-default.conf -> ../sites-available/000-default.conf
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-enabled$ cd ../sites-available/
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-available$ ls
+000-default.conf  default-ssl.conf
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-available$ vim 000-default.conf 
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-available$ sudo vim 000-default.conf 
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-available$ cd /var/www/
+ubuntu@ip-172-31-40-21:/var/www$ sudo mkdir xyz
+ubuntu@ip-172-31-40-21:/var/www$ ls
+html  xyz
+ubuntu@ip-172-31-40-21:/var/www$ sudo vim xyz/index.html
+ubuntu@ip-172-31-40-21:/var/www$ sudo systemctl resload apache2
+Unknown command verb resload.
+ubuntu@ip-172-31-40-21:/var/www$ sudo systemctl reload apache2
+ubuntu@ip-172-31-40-21:/var/www$ ls
+html  xyz
+ubuntu@ip-172-31-40-21:/var/www$ sudo systemctl restart apache2
+ubuntu@ip-172-31-40-21:/var/www$ ls
+html  xyz
+ubuntu@ip-172-31-40-21:/var/www$ cd /etc/apache2/
+ubuntu@ip-172-31-40-21:/etc/apache2$ ls
+apache2.conf    conf-enabled  magic           mods-enabled  sites-available
+conf-available  envvars       mods-available  ports.conf    sites-enabled
+ubuntu@ip-172-31-40-21:/etc/apache2$ cat sites-enabled/
