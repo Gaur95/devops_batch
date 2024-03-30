@@ -350,3 +350,105 @@ ubuntu@ip-172-31-40-21:/etc/apache2$ ls
 apache2.conf    conf-enabled  magic           mods-enabled  sites-available
 conf-available  envvars       mods-available  ports.conf    sites-enabled
 ubuntu@ip-172-31-40-21:/etc/apache2$ cat sites-enabled/
+```
+## DNS
+
+<img src=dns_1.jpg>
+<img src=dns_2.jpg>
+
+## VirtualHost Apache server
+
+<img src=dns_1.jpg>
+<img src=dns_2.jpg>
+
+```
+ubuntu@ip-172-31-40-21:~$ ls
+ubuntu@ip-172-31-40-21:~$ cd /etc/apache2/
+ubuntu@ip-172-31-40-21:/etc/apache2$ ls
+apache2.conf    envvars         mods-enabled     sites-enabled
+conf-available  magic           ports.conf
+conf-enabled    mods-available  sites-available
+ubuntu@ip-172-31-40-21:/etc/apache2$ sudo vim sites-available/
+ubuntu@ip-172-31-40-21:/etc/apache2$ sudo vim sites-available/000-default.conf 
+ubuntu@ip-172-31-40-21:/etc/apache2$ ls
+apache2.conf    envvars         mods-enabled     sites-enabled
+conf-available  magic           ports.conf
+conf-enabled    mods-available  sites-available
+ubuntu@ip-172-31-40-21:/etc/apache2$ cd /var/www/html/
+ubuntu@ip-172-31-40-21:/var/www/html$ cd ..
+ubuntu@ip-172-31-40-21:/var/www$ ls
+html  xyz
+ubuntu@ip-172-31-40-21:/var/www$ cd xyz/
+ubuntu@ip-172-31-40-21:/var/www/xyz$ cat index.html 
+<h1>another path</h1>
+ubuntu@ip-172-31-40-21:/var/www/xyz$ 
+ubuntu@ip-172-31-40-21:/var/www/xyz$ cd
+ubuntu@ip-172-31-40-21:~$ sudo vim /etc/apache2/sites-available/000-default.conf 
+ubuntu@ip-172-31-40-21:~$ cd /var/www/
+ubuntu@ip-172-31-40-21:/var/www$ ls
+html  xyz
+ubuntu@ip-172-31-40-21:/var/www$ sudo mkdir hello akash
+ubuntu@ip-172-31-40-21:/var/www$ ls
+akash  hello  html  xyz
+ubuntu@ip-172-31-40-21:/var/www$ sudo vim akash/index.html
+ubuntu@ip-172-31-40-21:/var/www$ sudo cat akash/index.html
+<h1>hello world my name is akash</h1>
+ubuntu@ip-172-31-40-21:/var/www$ sudo vim hello/index.html
+ubuntu@ip-172-31-40-21:/var/www$ cat  vim hello/index.html
+cat: vim: No such file or directory
+<h1>hellllllllllooooooooooo</h1>
+ubuntu@ip-172-31-40-21:/var/www$ cat hello/index.html
+<h1>hellllllllllooooooooooo</h1>
+ubuntu@ip-172-31-40-21:/var/www$ cd /etc/apache2/
+ubuntu@ip-172-31-40-21:/etc/apache2$ s
+s: command not found
+ubuntu@ip-172-31-40-21:/etc/apache2$ ls
+apache2.conf    envvars         mods-enabled     sites-enabled
+conf-available  magic           ports.conf
+conf-enabled    mods-available  sites-available
+ubuntu@ip-172-31-40-21:/etc/apache2$ cd sites-available/
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-available$ ls
+000-default.conf  default-ssl.conf
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-available$ vim akash.com.conf
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-available$ sudo vim akash.com.conf
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-available$ cat akash.com.conf 
+<VirtualHost *:80>
+        ServerName akash.com
+        DocumentRoot /var/www/akash
+</VirtualHost>
+
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-available$ sudo vim hello.com.conf
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-available$ ls
+000-default.conf  akash.com.conf  default-ssl.conf  hello.com.conf
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-available$ en
+enable                       encguess
+enable-ec2-spot-hibernation  env
+enc2xs                       envsubst
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-available$ en
+enable                       encguess
+enable-ec2-spot-hibernation  env
+enc2xs                       envsubst
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-available$ 
+
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-available$ cd ../sites-enabled/
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-enabled$ ls
+000-default.conf
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-enabled$ cd ../sites-available/
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-available$ ls
+000-default.conf  akash.com.conf  default-ssl.conf  hello.com.conf
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-available$ a2ensite akash.com.conf hello.com.conf 
+Enabling site akash.com.
+Could not create /etc/apache2/sites-enabled/akash.com.conf: Permission denied
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-available$ sudo a2ensite akash.com.conf hello.com.conf 
+Enabling site akash.com.
+Enabling site hello.com.
+To activate the new configuration, you need to run:
+  systemctl reload apache2
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-available$ cd ../sites-enabled/
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-enabled$ ls
+000-default.conf  akash.com.conf  hello.com.conf
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-enabled$ sudo systemctl reload apache2
+ubuntu@ip-172-31-40-21:/etc/apache2/sites-enabled$ apache2 -t
+[Sat Mar 30 05:27:52.624257 2024] [core:warn] [pid 4366] AH00111: Config variable ${APACHE_RUN_DIR} is not defined
+apache2: Syntax error on line 80 of /etc/apache2/apache2.conf: DefaultRuntimeDir must be a valid directory, absolute or relative to ServerRoot
+```
