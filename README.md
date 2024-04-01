@@ -452,3 +452,31 @@ ubuntu@ip-172-31-40-21:/etc/apache2/sites-enabled$ apache2 -t
 [Sat Mar 30 05:27:52.624257 2024] [core:warn] [pid 4366] AH00111: Config variable ${APACHE_RUN_DIR} is not defined
 apache2: Syntax error on line 80 of /etc/apache2/apache2.conf: DefaultRuntimeDir must be a valid directory, absolute or relative to ServerRoot
 ```
+## Storage
+
+```
+> storage
+> 3 types
+> block storage , file storage , object storage
+> block st ---> 
+> block format data store 
+> single Os storage , do not share at same time 
+> max block size = 4mb 
+> 
+> file storage -->> 
+> share at a time 
+> 
+> object storage -->> 
+> slow speed
+> store data in object form
+> 
+> 
+> Partitions --->
+>    why --> to seprate file , crupt issue , 
+>   type  --> MBR(master boot record) , GPT( GUID partiton table)
+> DIFF MBR -max 4 primary part , GPT - 128 primary 
+> legacy bios support only , both UEFI and legacy 
+> crc not support , crc support (cyclic redendency check) 
+> size - max 2TB , 9ZB 
+> lsblk - to check volume
+```
