@@ -478,5 +478,99 @@ apache2: Syntax error on line 80 of /etc/apache2/apache2.conf: DefaultRuntimeDir
 > legacy bios support only , both UEFI and legacy 
 > crc not support , crc support (cyclic redendency check) 
 > size - max 2TB , 9ZB 
-> lsblk - to check volume
+> cmd - fdisk  , gdisk
+>lsblk - to check volume
+>
+lsblk
+    8  fdisk
+    9  sudo fdisk /dev/xvdbb 
+   10  lsblk 
+   11  mkdir hello
+   12  mount /dev/xvdbb1 hello
+   13  sudo mount /dev/xvdbb1 hello
+   14  mkfs.ext4 /dev/xvdbb1 
+   15  sudo mkfs.ext4 /dev/xvdbb1 
+   16  sudo mount /dev/xvdbb1 hello
+   17  lsblk 
+   18  cd hello/
+   19  mkdir cool xyz hurrey
+   20  sudo mkdir cool xyz hurrey
+   21  ls
+   22  lsblk
+   23  mkdir cooool
+   24  ls
+   25  cd hello/
+   26  ls
+   27  cd  ../cooool/
+   28  ls
+   29  sudo mount /dev/xvdbb1 ../cooool/
+   30  ls
+   31  cd ..
+   32  ls
+   33  cd cooool/
+   34  ls
+   35  history 
+
+Command (m for help): p
+Disk /dev/xvdbb: 10 GiB, 10737418240 bytes, 20971520 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x1e1e7857
+
+Command (m for help): n
+Partition type
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
+Select (default p): 
+
+Using default response p.
+Partition number (1-4, default 1): 
+First sector (2048-20971519, default 2048): 
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-20971519, default 20971519): +2G
+
+Created a new partition 1 of type 'Linux' and of size 2 GiB.
+
+Command (m for help): p
+Disk /dev/xvdbb: 10 GiB, 10737418240 bytes, 20971520 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x1e1e7857
+
+Device      Boot Start     End Sectors Size Id Type
+/dev/xvdbb1       2048 4196351 4194304   2G 83 Linux
+
+Command (m for help): n
+Partition type
+   p   primary (1 primary, 0 extended, 3 free)
+   e   extended (container for logical partitions)
+Select (default p): 
+
+Using default response p.
+Partition number (2-4, default 2): 
+First sector (4196352-20971519, default 4196352): 
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (4196352-20971519, default 20971519): +3G
+
+Created a new partition 2 of type 'Linux' and of size 3 GiB.
+
+Command (m for help): p
+Disk /dev/xvdbb: 10 GiB, 10737418240 bytes, 20971520 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x1e1e7857
+
+Device      Boot   Start      End Sectors Size Id Type
+/dev/xvdbb1         2048  4196351 4194304   2G 83 Linux
+/dev/xvdbb2      4196352 10487807 6291456   3G 83 Linux
+
+Command (m for help): w
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+
 ```
