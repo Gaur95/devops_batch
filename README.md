@@ -590,3 +590,6 @@ ubuntu@akash:~/hello$ blkid
 sudo findmnt --verify
 ```
 <img src=store1.png>
+
+## AWS Loadbalancer
+<img src=lb.jpg>
