@@ -585,4 +585,4 @@ ubuntu@akash:~/hello$ blkid
 /dev/xvda15: LABEL_FATBOOT="UEFI" LABEL="UEFI"
 
 ```
-<src img=store.png>
+<img src=store.png>
