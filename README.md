@@ -585,4 +585,8 @@ ubuntu@akash:~/hello$ blkid
 /dev/xvda15: LABEL_FATBOOT="UEFI" LABEL="UEFI"
 
 ```
+### to check fstab syntax
+```
+sudo findmnt --verify
+```
 <img src=store1.png>
