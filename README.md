@@ -574,3 +574,15 @@ Calling ioctl() to re-read partition table.
 Syncing disks.
 
 ```
+### fstab entry
+
+```
+ubuntu@akash:~/hello$ sudo vim /etc/fstab 
+ubuntu@akash:~/hello$ 
+ubuntu@akash:~/hello$ blkid
+/dev/xvdbb1: UUID="97b5decd-673e-4276-98bb-bd02597372a5" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="1e1e7857-01"
+/dev/xvda1: LABEL="cloudimg-rootfs" UUID="1127d3f4-3de6-4e02-8705-713269caf74d" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="e8236a68-6bd3-42a4-9e96-54b36cb5909e"
+/dev/xvda15: LABEL_FATBOOT="UEFI" LABEL="UEFI"
+
+```
+<src img=store.png>
