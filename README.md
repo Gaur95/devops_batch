@@ -805,3 +805,14 @@ To github.com:Gaur95/test_repo.git
    ea41c96..ccbeeb8  master -> master
 akash@sky:~/test_repo$ 
 ```
+## git basic commands
+```
+git clone git_repo_url
+git status
+git add . 
+git status
+git commit -m "copy 4 times"
+git log
+git push
+```
+
