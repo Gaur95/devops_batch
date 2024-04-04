@@ -596,3 +596,212 @@ sudo findmnt --verify
 
 ## GitHub
 <img src=github_1.jpg>
+
+## Git
+```
+akash@sky:~$ git clone https://github.com/Gaur95/test_repo.git
+Cloning into 'test_repo'...
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 12 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (12/12), 3.68 KiB | 538.00 KiB/s, done.
+akash@sky:~$ ls
+'2024-03-19 17-01-14.mkv'   Documents                               Pictures         test.py
+'2024-03-20 15-34-57.mkv'   Documents_sender                        portfoilo        test_repo
+'2024-03-20 15-45-12.mkv'   Downloads                               project          TI
+'2024-03-20 15-45-36.mkv'   godady_project                          Public           Upflairs-pages
+'2024-03-20 15-45-48.mkv'  'Lords University Alwar, Certificates'   python_learn     upflairs-summer-frontend
+ batch2.30                  mail_sender                             react-vite_web   Videos
+ certificate_web            Music                                   shell_script     x
+ demo.txt                   mynewtest                               snap
+ Desktop                    NetSpeed                                Templates
+akash@sky:~$ cd test_repo/
+akash@sky:~/test_repo$ ls
+index.html  README.md
+akash@sky:~/test_repo$ cat index.html 
+hello this is sample file for testing
+akash@sky:~/test_repo$ cat README.md 
+# test_repo
+## sub heading
+### title
++ this is use only for learn git and github
++ hello
+akash@sky:~/test_repo$ 
+akash@sky:~/test_repo$ git logs
+git: 'logs' is not a git command. See 'git --help'.
+
+The most similar command is
+	log
+akash@sky:~/test_repo$ git log
+commit bbf5f13a0ee90a9a4c5d52fc7ce0a8b927961093 (HEAD -> master, origin/master, origin/HEAD)
+Author: Akash Gaur <104058163+Gaur95@users.noreply.github.com>
+Date:   Thu Apr 4 11:08:08 2024 +0530
+
+    Create index.html
+
+commit 4665cb03a4affae83e7522f0f86e189834476d07
+Author: Akash Gaur <104058163+Gaur95@users.noreply.github.com>
+Date:   Thu Apr 4 10:58:14 2024 +0530
+
+    change to title
+
+commit aed0d1a724ac54359297e7a97fdd5353137674fc
+Author: Akash Gaur <104058163+Gaur95@users.noreply.github.com>
+Date:   Thu Apr 4 10:57:10 2024 +0530
+
+    added tag in readme
+
+commit 3ab469a7db8d268afa9a543d8f59f498f1263243
+Author: Akash Gaur <104058163+Gaur95@users.noreply.github.com>
+Date:   Thu Apr 4 10:51:51 2024 +0530
+
+    Initial commit
+akash@sky:~/test_repo$ vim index.html 
+akash@sky:~/test_repo$ cat index.html 
+hello this is sample file for testing
+hello this is sample file for testing
+hello this is sample file for testing
+hello this is sample file for testing
+hello this is sample file for testing
+hello this is sample file for testing
+akash@sky:~/test_repo$ ls -a
+.  ..  .git  index.html  README.md
+akash@sky:~/test_repo$ git statsu
+akash@sky:~/test_repo$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+akash@sky:~/test_repo$ git add . 
+akash@sky:~/test_repo$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   index.html
+
+akash@sky:~/test_repo$ git commit -m "copy 4 times"
+[master 1c1b6d7] copy 4 times
+ 1 file changed, 5 insertions(+)
+akash@sky:~/test_repo$ git log
+commit 1c1b6d7b6265b09559f43d1dcb735409ba12c099 (HEAD -> master)
+Author: gaur95 <aakashgaur57@gmail.com>
+Date:   Thu Apr 4 11:24:45 2024 +0530
+
+    copy 4 times
+
+commit bbf5f13a0ee90a9a4c5d52fc7ce0a8b927961093 (origin/master, origin/HEAD)
+Author: Akash Gaur <104058163+Gaur95@users.noreply.github.com>
+Date:   Thu Apr 4 11:08:08 2024 +0530
+
+    Create index.html
+
+commit 4665cb03a4affae83e7522f0f86e189834476d07
+Author: Akash Gaur <104058163+Gaur95@users.noreply.github.com>
+Date:   Thu Apr 4 10:58:14 2024 +0530
+
+    change to title
+
+commit aed0d1a724ac54359297e7a97fdd5353137674fc
+Author: Akash Gaur <104058163+Gaur95@users.noreply.github.com>
+Date:   Thu Apr 4 10:57:10 2024 +0530
+
+    added tag in readme
+
+
+akash@sky:~/test_repo$ code .
+akash@sky:~/test_repo$ git push
+Username for 'https://github.com': gaur95
+Password for 'https://gaur95@github.com': 
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 575 bytes | 287.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/Gaur95/test_repo.git
+   bbf5f13..ea41c96  master -> master
+akash@sky:~/test_repo$ cd
+akash@sky:~$ rm -rf test_repo/
+akash@sky:~$ ls
+'2024-03-19 17-01-14.mkv'   Documents                               Pictures         test.py
+'2024-03-20 15-34-57.mkv'   Documents_sender                        portfoilo        TI
+'2024-03-20 15-45-12.mkv'   Downloads                               project          Upflairs-pages
+'2024-03-20 15-45-36.mkv'   godady_project                          Public           upflairs-summer-frontend
+'2024-03-20 15-45-48.mkv'  'Lords University Alwar, Certificates'   python_learn     Videos
+ batch2.30                  mail_sender                             react-vite_web   x
+ certificate_web            Music                                   shell_script
+ demo.txt                   mynewtest                               snap
+ Desktop                    NetSpeed                                Templates
+akash@sky:~$ 
+akash@sky:~$ ssh-keygen 
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/akash/.ssh/id_rsa): 
+/home/akash/.ssh/id_rsa already exists.
+Overwrite (y/n)? n
+akash@sky:~$ cd .ssh/
+akash@sky:~/.ssh$ ls
+id_rsa  id_rsa.pub  known_hosts
+akash@sky:~/.ssh$ cat id_rsa.pub 
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDLbUtOW5r53ggxdqTniRCVpg81Mtg33UmiVrO39NAp0u/MM1nor3+Ya1dYNoi3tBaqPF4j/qe4IpMavNJjAcy5pd2KOsN1oEqmbxz10qNyNKglKZIgYUJBDcA3qUh5IKG1jSXEk3/C3yc2pmC4cdJu5FQcre56J0exja1+XBL1kXihP7UyiKzF9aiUpvVRDlQwDo1u8R2RJPN1tKWmRqDGX3N0671oStfGM8CVP7kqFQj4PUJQeY8Yj22cgq+IHWSeTkW1bnuUhMuilK1it8MmSthWFtreAIsX0weBlYSaeHjGOuARmfE3uOOp+jR925nUo7cXN5bhR8cxDYJuGJZqx+1DyfluZuy+M/6nItmLsPQZiTHXoDmL3Y8dyIusr2axYKEJpsKH16XCu9mfxe2rE7+FX8azvDhMUm36mbIu1aLBbNjhnnAPrTl1IZCz4ubHT3zrhmr1pW/5rAuKyyysHEVTdwIP4pEpiWaF81CapA7agmbgxCwnrMIyjxJphmM= akash@sky
+akash@sky:~/.ssh$ cd
+akash@sky:~$ git clone git@github.com:Gaur95/test_repo.git
+Cloning into 'test_repo'...
+The authenticity of host 'github.com (20.207.73.82)' can't be established.
+ECDSA key fingerprint is SHA256:p2QAMXNIC1TJYWeIOttrVc98/R1BUFWu3/LiyKgUfQM.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com,20.207.73.82' (ECDSA) to the list of known hosts.
+remote: Enumerating objects: 18, done.
+remote: Counting objects: 100% (18/18), done.
+remote: Compressing objects: 100% (13/13), done.
+remote: Total 18 (delta 1), reused 6 (delta 1), pack-reused 0
+Receiving objects: 100% (18/18), 4.23 KiB | 2.11 MiB/s, done.
+Resolving deltas: 100% (1/1), done.
+akash@sky:~$ ls
+'2024-03-19 17-01-14.mkv'   Documents                               Pictures         test.py
+'2024-03-20 15-34-57.mkv'   Documents_sender                        portfoilo        test_repo
+'2024-03-20 15-45-12.mkv'   Downloads                               project          TI
+'2024-03-20 15-45-36.mkv'   godady_project                          Public           Upflairs-pages
+'2024-03-20 15-45-48.mkv'  'Lords University Alwar, Certificates'   python_learn     upflairs-summer-frontend
+ batch2.30                  mail_sender                             react-vite_web   Videos
+ certificate_web            Music                                   shell_script     x
+ demo.txt                   mynewtest                               snap
+ Desktop                    NetSpeed                                Templates
+akash@sky:~$ cd test_repo/
+akash@sky:~/test_repo$ ls
+index.html  README.md
+akash@sky:~/test_repo$ vim index.html 
+akash@sky:~/test_repo$ git status 
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+akash@sky:~/test_repo$ git add .
+akash@sky:~/test_repo$ git commit -m "changes"
+[master ccbeeb8] changes
+ 1 file changed, 3 insertions(+)
+akash@sky:~/test_repo$ git push 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 310 bytes | 310.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:Gaur95/test_repo.git
+   ea41c96..ccbeeb8  master -> master
+akash@sky:~/test_repo$ 
+```
