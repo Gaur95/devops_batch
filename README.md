@@ -591,10 +591,5 @@ sudo findmnt --verify
 ```
 <img src=store2.png>
 
-## replace fsck 1 to 0 
-```
-
-```
-
 ## AWS Loadbalancer
 <img src=lb.jpg>
