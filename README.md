@@ -64,3 +64,28 @@ CONTAINER ID   IMAGE             COMMAND                  CREATED          STATU
 c10c9041a2f5   alpine            "ping google.com"        15 seconds ago   Up 14 seconds                                                                                              upbeat_galois
 55dbb8a6ad90   jenkins/jenkins   "/usr/bin/tini -- /u…"   2 weeks ago      Up 10 hours     0.0.0.0:8080->8080/tcp, :::8080->8080/tcp, 0.0.0.0:50000->50000/tcp, :::50000->50000/tcp   fervent_saha
 ```
+### Docker basic commands
+```
+docker version ----> to show client and server details
+> docker images ---> to show docker images
+> docker ps ----> to show only running container 
+> docker ps -a -----> to show all container 
+> docker pull -----> to pull or get image from dockerhub / docker registry 
+> docker run ----> to run container  from docker image
+> options 
+>    -d ----> to detach container / container goes in background
+>    --name  ---> to give name 
+>    -it -----> intractive terminal  and give  (task/CMD ---> shell name)
+> 
+> to exit from -it use exit cmd  ----> then container stoped 
+> to exit from container click  cntrl P+Q  --- then still running 
+> docker exec -it  (container_name  or Container Id) (shell)
+> docker stop (container_name/id) ---> to stop container
+> docker start (conatiner_name/id) ---> to start container 
+> docker rm (container_name/id) ---> to delete exited container 
+> docker rm -f (container_name/id)  ---> to delete running container also 
+> docker rmi (container_name/id) ----> to delete docker image 
+> docker tag ca2b0f26964c ubuntu ----> to change image name
+> docker inspect ---> to inspect container details
+
+```
