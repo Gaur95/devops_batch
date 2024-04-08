@@ -87,5 +87,10 @@ docker version ----> to show client and server details
 > docker rmi (container_name/id) ----> to delete docker image 
 > docker tag ca2b0f26964c ubuntu ----> to change image name
 > docker inspect ---> to inspect container details
+> docker commit ---> to create image from container
+> docker login ----> to cli login of docker registry
+> docker logout
+> docker push (image_name) ---> to push on dockerhub 
 
 ```
+### NOTE- create image name using your username like - aakashgaur57/myimg 
