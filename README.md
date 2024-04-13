@@ -94,3 +94,24 @@ docker version ----> to show client and server details
 
 ```
 ### NOTE- create image name using your username like - aakashgaur57/myimg 
+
+
+## mysql , phpmyadmin , wordpress
+
+```
+2047  docker build -t echotest -f echo-dockerfile . 
+ 2048  docker run -e name=akash echotest
+ 2049  docker run -e name=ak echotest
+ 2050  vim myvar
+ 2051  docker run --env-file myvar echotest
+ 2052  docker run -it --env-file myvar echotest
+ 2053  docker run -it --env-file myvar echotest bash
+ 2054  docker run -e MYSQL_USER=test -e MYSQL_PASSWORD=q123 -d mysql
+ 2055  docker ps
+ 2056  docker run -e MYSQL_ROOT_PASSWORD=q123 @MYSQL_ROOT_PASSWORD -e MYSQL_USER=test -e MYSQL_PASSWORD=q123 -d mysql
+ 2057  docker ps
+ 2058  docker inspect 299 | grep IPA
+ 2059  mysql -h 172.17.0.6 -u test -p
+ 2060  docker run -itd -e PMA_HOST=172.17.0.6 phpmyadmin
+ 2061  docker inspect df69 | grep IPA
+```
