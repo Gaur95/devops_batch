@@ -115,3 +115,30 @@ docker version ----> to show client and server details
  2060  docker run -itd -e PMA_HOST=172.17.0.6 phpmyadmin
  2061  docker inspect df69 | grep IPA
 ```
+## docker volume
+
+```
+docker volume ls
+ 1963  docker ps
+ 1964  docker volume create myvolume
+ 1965  docker volume ls
+ 1966  docker run -it --rm --name test ubuntu bash
+ 1967  docker ps -a
+ 1968  docker run -it -v myvolume:/hello --rm --name akash ubuntu bash
+
+rootuser
+ ls
+  184  docker run -it --rm -v /home/akash/test/:/abc ubuntu 
+  185  docker run -itd --rm -v /home/akash/test/:/var/www/html/ aakashgaur57/apache
+  186  docker run -itd --rm -v /home/akash/test/:/var/www/html/ aakashgaur57/apache:1.1.0
+  187  docker ps
+  188  docker inspect c26 | grep IPA
+  189  cat index.html 
+  190  docker exec -it c26 bash
+  191  docker run -itd --rm -v /home/akash/test/:/usr/local/apache2/htdocs/ aakashgaur57/apache:1.1.0
+  192  docker volume 
+  193  vim index.html 
+  194  docker run -itd --rm -v xxyyyzz:/usr/local/apache2/htdocs/ aakashgaur57/apache:1.1.0
+  195  docker volume ls
+
+```
