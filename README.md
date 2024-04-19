@@ -142,3 +142,25 @@ rootuser
   195  docker volume ls
 
 ```
+
+### port forwarding 
+```
+docker run -itd httpd
+    2  docker ps
+    3  docker inspect 764 | grep IPA
+    4  curl 172.17.0.2
+    5  docker run -itd 
+    6  docker run -itd -p 1122:80 httpd
+    7  docker ps
+    8  docker run -itd -p 1123:80 phpmyadmin 
+    9  docker ps
+   10  docker run -itd -p 80:80 httpd
+   11  systemctl status apache2
+   12  systemctl status nginx
+   13  docker run -itd  -e ssh_pass=q123 -p 1155:22 aakashgaur57/mysshtest
+   14  docker ps
+   15  docker images
+   16  docker ps
+   17  docker 
+   18  docker images
+```
