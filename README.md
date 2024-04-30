@@ -164,3 +164,51 @@ docker run -itd httpd
    17  docker 
    18  docker images
 ```
+## docker network 
+<img src=net.jpg>
+
+### history
+```
+1996  docker ps
+ 1997  docker run -itd --name c1 --network host alpine
+ 1998  docker ps
+ 1999  docker inspect 0e1f7 | grep IPA
+ 2000  ifconfig 
+ 2001  docker exec -it  0e1f7 sh
+ 2002  docker run -itd --name c2 --network null alpine 
+ 2003  docker run -itd --name c2 --network none alpine 
+ 2004  docker ps
+ 2005  docker rm -f c2
+ 2006  docker run -itd --name c2 --network none alpine 
+ 2007  docker ps
+ 2008  docker inspect c7 | grep IPA
+ 2009  docker exec -it c7 sh
+ 2010  docker network create mynet subnet 192.168.1.0/24
+ 2011  docker network create mynet subnet=192.168.1.0/24
+ 2012  docker network --help
+ 2013  docker network create --help
+ 2014  docker network create mynet --subnet 192.168.1.0/24
+ 2015  docker network ls
+ 2016  docker network inspect mynet 
+ 2017  docker run -itd --name c3 --network mynet alpine
+ 2018  docker ps
+ 2019  docker inspect c3 | grep IPA
+ 2020  docker run -itd --name c4 --network mynet --ip 192.168.1.35 alpine
+ 2021  docker ps
+ 2022  docker inspect c4 | grep IPA
+ 2023  docker exec -it c3 sh
+ 2024  docker network create mynet2
+ 2025  docker run -itd --name c5 --network mynet2 alpine
+ 2026  docker ps
+ 2027  docker run -itd --name c6 --network mynet2 alpine
+ 2028  docker ps
+ 2029  docker exec -it c6 sh
+ 2030  sudo vim /etc/resolv.conf 
+ 2031  docker network connect mynet2 c4
+ 2032  docker exec -it c4 sh
+ 2033  docker rm -f $(docker ps -aq)
+ 2034  docker network ls
+ 2035  docker network rm mynet2 
+ 2036  docker network prune 
+ 2037  docker network ls
+```
