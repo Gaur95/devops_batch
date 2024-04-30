@@ -166,9 +166,30 @@ docker run -itd httpd
 ```
 ## docker network 
 <img src=net.jpg>
+<img src=net2.jpg>
 
 ### history
 ```
+docker network ls
+ 1904  ifconfig 
+ 1905  docker network create mynetwork 
+ 1906  docker network ls
+ 1907  docker network inspect mynetwork 
+ 1908  docker run -itd --network mynetwork ubuntu 
+ 1909  docker ps
+ 1910  docker inspect ec23 | grep IPA
+ 1911  docker run -itd --name net1 ubuntu
+ 1912  docker ps
+ 1913  docker inspect 521 | grep IPA
+ 1914  ifconfig 
+ 1915  ping 172.18.0.2
+ 1916  ping 172.17.0.3
+ 1917  docker -itd --name mynet1 --network mynetwork alpine
+ 1918  docker run -itd --name mynet1 --network mynetwork alpine
+ 1919  docker exec -it mynet1  bash
+ 1920  docker exec -it mynet1  sh
+ 1921  docker ps -a
+ 1922  docker rm $(docker ps -aq)
 1996  docker ps
  1997  docker run -itd --name c1 --network host alpine
  1998  docker ps
