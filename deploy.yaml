@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akdeploy
+spec:
+  replicas: 4
+  strategy: 
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+
+  selector:
+    matchLabels:
+      laptop: hp
+  template:
+    metadata:
+      labels:
+        laptop: hp
+    spec:
+      containers:
+      - name: myapp
+        image: httpd
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
