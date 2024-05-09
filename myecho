@@ -1,3 +1,0 @@
-#!/bin/bash
-#shebang for use to fix excuteable shell
-echo "hello world"
