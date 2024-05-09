@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: akrc
+spec:
+  replicas: 4
+  selector:
+    laptop: hp
+  template:
+    metadata:
+      name: akpod
+      labels:
+        laptop: hp
+    spec:
+      containers:
+        - name: myapp
+          image: httpd
+          ports:
+            - containerPort: 80
