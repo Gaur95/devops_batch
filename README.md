@@ -119,3 +119,41 @@ NAME     READY   STATUS    RESTARTS   AGE
 mypod1   1/1     Running   0          27s
 akash@sky:~/office_batch_k8s$
 ```
+## history  9 may 
+```
+kubectl api-resources
+ 1996  kubectl api-resources | grep deploy
+ 1997  kubectl apply -f deploy.yaml 
+ 1998  kubectl get pod
+ 1999  kubectl get pod -w
+ 2000  kubectl get deploy
+ 2001  kubectl describe deploy akdeploy
+ 2002  kubectl get rs 
+ 2003  kubectl get pod -w
+ 2004  kubectl descibe pod akdeploy-5665958cb8-cl7t8
+ 2005  kubectl describe pod akdeploy-5665958cb8-cl7t8
+ 2006  kubectl apply -f deploy.yaml 
+ 2007  kubectl get pod -w
+ 2008  kubectl describe pod akdeploy-5665958cb8-cl7t8
+ 2009  kubectl get pod -w
+ 2010  kubectl describe pod akdeploy-6c9d9cc6f8-2892s
+ 2011  kubectl apply -f deploy.yaml 
+ 2012  kubectl get pod -w
+ 2013  kubectl get pod 
+ 2014  kubectl apply -f deploy.yaml 
+ 2015  kubectl get pod 
+ 2016  kubectl get pod  -w
+ 2017  kubectl edit deploy  akdeploy
+ 2018  kubectl get pod
+ 2019  history 
+ 2020  kubectl completion bash
+ 2021  source ~/.bashrc 
+ 2022  echo 'source <(kubectl completion bash)' >>~/.bashrc
+ 2023  source ~/.bashrc 
+ 2024  kubectl run akpo1 --image nginx --port 80 --dry-run=client 
+ 2025  kubectl run akpo1 --image nginx --port 80 
+ 2026  kubectl get pod
+ 2027  kubectl run akpo2 --image nginx --port 80 --dry-run=client -o yaml
+ 2028  kubectl run akpo2 --image nginx --port 80 --dry-run=client -o yaml > mypod.yaml
+ 2029  kubectl create  deployment myde --replicas 2 --image httpd --port 80 --dry-run=client -o yaml
+```
