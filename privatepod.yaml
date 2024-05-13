@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pripod
+  labels:
+    name: pripod
+spec:
+  imagePullSecrets: 
+    - name: akcred
+  containers:
+  - name: pripod
+    image: aakashgaur57/blue
+    
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80
