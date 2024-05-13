@@ -157,3 +157,18 @@ kubectl api-resources
  2028  kubectl run akpo2 --image nginx --port 80 --dry-run=client -o yaml > mypod.yaml
  2029  kubectl create  deployment myde --replicas 2 --image httpd --port 80 --dry-run=client -o yaml
 ```
+## history secrets and service
+```
+minikube status
+ 2009  cd office_batch_k8s/
+ 2010  ls
+ 2011  code .
+ 2012  kubectl create secret 
+ 2013  kubectl create secret docker-registry akcred --docker-server docker.io --docker-username aakashgaur57 --docker-password Q123@
+ 2014  kubectl get secrets 
+ 2015  kubectl get svc
+ 2016  minikube ip
+ 2017  kubectl get pod --show-labels
+ 2018  kubectl exec -it akpo1d -- bash
+ 2019  kubectl exec -it akpo1d bash
+```
