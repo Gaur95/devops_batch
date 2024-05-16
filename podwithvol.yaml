@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+  labels:
+    name: myapp
+spec:
+  containers:
+  - name: myapp
+    image: httpd
+    ports:
+      - containerPort: 80
+    volumeMounts:
+     - mountPath: /var/www/
+       name: example-volume
+  volumes:
+    - name: example-volume 
+      persistentVolumeClaim:
+        claimName: akpvc
